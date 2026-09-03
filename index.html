@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>狂刀万古 · 称谓剧情任务流程</title>
+<title>狂刀万古 · 复古攻速单职业 · 攻略</title>
 <style>
 :root {
   --paper:#f4eee2; --ink:#211c16; --muted:#6b5f4f; --line:#d8c9b2;
@@ -22,8 +22,24 @@ header.hero {
   color:#f9ead5; padding:48px 22px 38px; margin-bottom:26px;
 }
 header.hero .inner { max-width:1080px; margin:0 auto; }
-.hero h1 { margin:0 0 10px; font-size:clamp(28px,4vw,44px); line-height:1.15; }
-.hero p { margin:0; max-width:760px; font-size:16px; line-height:1.7; color:#e4d0b5; }
+.hero h1 { margin:0 0 8px; font-size:clamp(40px,6vw,62px); line-height:1.05; letter-spacing:0; }
+.hero .version-line { margin:0; font-size:clamp(15px,2.2vw,19px); font-weight:600; color:#ffe1a1; }
+.hero .desc { margin:8px 0 0; max-width:720px; font-size:14px; line-height:1.7; color:#dfc7a8; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:22px; }
+.btn-download {
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:50px; padding:12px 22px; border-radius:8px;
+  background:#f2c14e; color:#2a1a13; font-size:17px; font-weight:800;
+  text-decoration:none; box-shadow:0 10px 24px rgba(0,0,0,.24);
+}
+.btn-download:hover { background:#ffd968; }
+.btn-download small { font-size:12px; font-weight:600; opacity:.8; }
+.devices { display:flex; flex-wrap:wrap; gap:8px; }
+.device {
+  display:inline-flex; align-items:center; min-height:30px; padding:5px 12px;
+  border:1px solid rgba(255,224,180,.35); background:rgba(255,244,224,.12);
+  color:#ffe6bd; border-radius:999px; font-size:12px;
+}
 .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
 .chip {
   background:rgba(255,244,224,.12); border:1px solid rgba(255,224,180,.35);
@@ -87,13 +103,69 @@ nav.toc a:hover { border-color:#9a7a4a; color:#7a2f24; }
 .kind.reward { background:#2f6f48; }
 .kind.step { background:#6e6253; }
 .phase-chip { color:var(--muted); font-size:12px; }
+.guide { scroll-margin-top:64px; }
+.guide-title { display:flex; align-items:center; gap:12px; margin:0 0 16px; }
+.guide-title .num {
+  flex:0 0 44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+  color:#fff; background:#7f3a2c; font-weight:800;
+}
+.guide-title h2 { margin:0; font-size:24px; }
+.guide-title p { margin:4px 0 0; color:var(--muted); font-size:13px; }
+.guide-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:36px; }
+.guide-card {
+  background:var(--card); border:1px solid var(--line); border-left:5px solid var(--gc,#7f3a2c);
+  border-radius:8px; padding:14px 16px;
+}
+.guide-card .guide-no { color:var(--gc,#7f3a2c); font-size:12px; font-weight:800; letter-spacing:0; }
+.guide-card h3 { margin:5px 0 8px; font-size:18px; line-height:1.35; }
+.guide-card > p { margin:0 0 8px; color:#3f362c; font-size:14px; line-height:1.7; }
+.guide-card ul { margin:0; padding-left:18px; color:#514538; font-size:14px; line-height:1.7; }
+.guide-card li + li { margin-top:4px; }
+.guide-highlight { background:#fff2d8; border-color:#dfc27e; }
+.guide-highlight b { color:#8a4b10; }
+.quest-start {
+  display:flex; align-items:center; gap:14px; margin:46px 0 0; padding-top:22px;
+  border-top:2px solid var(--line);
+}
+.quest-start h2 { margin:0; font-size:24px; }
+.quest-start p { margin:4px 0 0; color:var(--muted); font-size:13px; }
+.quest-start .num {
+  flex:0 0 46px; height:46px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+  color:#fff; background:#7f3a2c; font-weight:800;
+}
 @media (max-width:640px) {
   body { font-size:15px; }
-  .flow { margin-left:8px; padding-left:22px; }
-  .step { grid-template-columns:32px 1fr; gap:8px; }
-  .index { width:30px; height:30px; font-size:10px; }
-  .card { padding:12px 14px; }
-  .card h3 { font-size:16px; }
+  .wrap { padding:0 14px 60px; }
+  header.hero { padding:34px 16px 30px; }
+  .hero-actions { flex-direction:column; align-items:stretch; }
+  .btn-download { width:100%; }
+  .devices { justify-content:center; }
+  .guide-title { align-items:flex-start; }
+  .guide-list { grid-template-columns:1fr; }
+  .summary { padding:0; border:0; background:transparent; box-shadow:none; }
+  .summary h2 { font-size:20px; margin:0 0 10px; }
+  .summary-grid { grid-template-columns:1fr; gap:8px; }
+  .summary-item { padding:10px 12px; }
+  .phase { margin:36px 0 0; scroll-margin-top:56px; }
+  .phase-head { align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .phase-no { width:46px; height:46px; flex-basis:46px; font-size:17px; }
+  .phase-head h2 { font-size:22px; line-height:1.2; }
+  .phase-head p { font-size:13px; }
+  .flow { margin-left:0; padding-left:0; border-left:0; }
+  .step { display:block; margin-bottom:10px; }
+  .index {
+    width:32px; height:32px; margin:0 0 6px; font-size:12px;
+    border-radius:8px; border:2px solid var(--accent,#7f3a2c);
+  }
+  .card { padding:13px 14px; }
+  .card h3 { font-size:16px; line-height:1.45; }
+  .card p { font-size:14px; line-height:1.7; }
+  .card-meta { gap:6px; margin-bottom:7px; }
+  .facts { flex-direction:column; align-items:stretch; gap:5px; font-size:13px; }
+  .facts span { display:flex; }
+  .facts b { min-width:34px; flex:0 0 34px; }
+  .req b { min-width:34px; }
+  .quest-start { margin-top:36px; }
 }
 @media print {
   body { background:#fff; }
@@ -104,15 +176,24 @@ nav.toc a:hover { border-color:#9a7a4a; color:#7a2f24; }
 </head>
 <body>
 <header class="hero"><div class="inner">
-<h1>狂刀万古 · 称谓剧情全流程</h1>
-<p>按“寂静城主之家接阶段 → 逐项推进 → 返回领奖”的纵向顺序阅读。每一阶段都标出地点、NPC、坐标和提交/击杀要求。</p>
-<div class="chips">
-<span class="chip">五阶段</span><span class="chip">63 个推进点</span>
-<span class="chip">阶段门禁 + 结算</span><span class="chip">离线 HTML，可直接双击打开</span>
+<h1>狂刀万古</h1>
+<p class="version-line">版本介绍｜复古攻速单职业 · 神器剧情 · 长久服</p>
+<div class="hero-actions">
+<a class="btn-download" href="https://yq.longxiangpintai6.com/mobile/Downfile/index?gid=401&amp;pid=22" target="_blank" rel="noopener">三端互通下载<small>Android / iOS / PC</small></a>
+<div class="devices"><span class="device">复古单职业</span><span class="device">神器剧情</span><span class="device">长久服</span></div>
 </div>
 </div></header>
 <main class="wrap">
-<nav class="toc"><a href="#仗剑江湖">01. 仗剑江湖</a><a href="#江湖名探">02. 江湖名探</a><a href="#圆梦大师">03. 圆梦大师</a><a href="#和平大使">04. 和平大使</a><a href="#沉默大王">05. 沉默大王</a></nav>
+<nav class="toc"><a href="#起号攻略">00. 起号攻略</a><a href="#仗剑江湖">01. 仗剑江湖</a><a href="#江湖名探">02. 江湖名探</a><a href="#圆梦大师">03. 圆梦大师</a><a href="#和平大使">04. 和平大使</a><a href="#沉默大王">05. 沉默大王</a></nav>
+<section class="guide" id="起号攻略"><div class="guide-title"><span class="num">00</span><div><h2>起号攻略</h2><p>货币、白嫖开局与快速养成，先看大方向再看执行细节</p></div></div>
+<div class="guide-list">
+<article class="guide-card guide-highlight" style="--gc:#a07110"><div class="guide-no">重点 01</div><h3>货币与白嫖开局</h3><p>本服以<b>元宝</b>为主要流通货币，元宝全部靠打，白嫖也能长期玩。</p><ul><li>上线送麒麟，宝宝可与人物对拉刺杀，人人能单挑 BOSS。</li><li>拉刺杀位时优先用和平 / 编组 / 行会模式，宝宝站位更稳、不乱跑。</li></ul></article>
+<article class="guide-card" style="--gc:#1f6f68"><div class="guide-no">玩法 02</div><h3>打宝与 BOSS 刷新</h3><p>本服 BOSS 采用<b>定点 + 不定点</b>双刷新，避免大号包场，也给散人发育机会。</p><ul><li>每张地图多转多看，遇到大 BOSS 可能直接翻身。</li><li>简单易懂，小怪也爆材料，人人都能佩戴终极。</li></ul></article>
+<article class="guide-card" style="--gc:#b26a1f"><div class="guide-no">消费 03</div><h3>起步投入参考</h3><p>按自身定位选择，不强求高投入。</p><ul><li>小资：8 元弹射起步 + 68 元至尊专属。</li><li>老板：再叠加在线充值 398 元，一次性购买更划算。</li></ul></article>
+<article class="guide-card" style="--gc:#7f5b8f"><div class="guide-no">养成 04</div><h3>快速打怪顺序</h3><p>前期优先提升<b>怪物克星</b>，有条件再提<b>弓箭守卫</b>，这是快速成型核心。</p><ul><li>怪物克星越往后升级，切割伤害越明显。</li><li>弓箭守卫提供大量对怪攻速，打怪效率翻倍。</li><li>后续潜能激活与洗练可解锁元素、百分比攻击等隐藏属性。</li><li>灵符是快速获取功能的捷径，来源含每日任务、剧情任务与实物回收。</li></ul></article>
+</div>
+</section>
+<section class="quest-start" id="称谓剧情"><span class="num">01</span><div><h2>称谓剧情全流程</h2><p>从仗剑江湖到沉默大王，从上到下按序推进；每一步都标清位置与要求</p></div></section>
 <section class="summary"><h2>完成顺序速览</h2><div class="summary-grid">
 <div class="summary-item" style="--sumc:#a33a2e"><b>01 · 仗剑江湖</b><span>15 点声望　蜈蚣洞穴</span></div><div class="summary-item" style="--sumc:#b26a1f"><b>02 · 江湖名探</b><span>45 点声望　石墓洞穴</span></div><div class="summary-item" style="--sumc:#7f5b8f"><b>03 · 圆梦大师</b><span>125 点声望　沃玛洞穴 + 寂静之城攻杀筹备</span></div><div class="summary-item" style="--sumc:#1f6f68"><b>04 · 和平大使</b><span>325 点声望　牛魔 → 骨魔 → 赤月 → 魔龙</span></div><div class="summary-item" style="--sumc:#6c4930"><b>05 · 沉默大王</b><span>500 点声望　兽王谷及关联秘境</span></div>
 </div></section>
